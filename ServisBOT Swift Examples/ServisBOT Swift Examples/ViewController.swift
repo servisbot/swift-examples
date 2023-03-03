@@ -1,72 +1,3 @@
-# swift-examples
-
-There is an xcode project with a simple ViewController that loads the Messenger with test config settings.
-
-## basic configuration
-
-```swift
-    let basicConfig:[String:Any] = [
-        "organization": "netscapestg",
-        "endpoint": "netscapestg-AskBot",
-        "sbRegion": "us-1",
-    ]
-```
-
-for your bots, check with your Account manager for your values
-
-## advance configuration
-
-```swift
-    let customStyle = ""  // a css file reference (hyperlink)
-
-    let enhancedConfig:[String:Any] = [
-        "organization": "netscapestg",
-        "endpoint": "netscapestg-AskBot",
-        "sbRegion": "us-1",
-        "displayWidget": true,
-        "customStyle": customStyle,
-        "customerReference": "1234567890",
-        "context": ["userName": "fakeUserName"]
-    ]
-```
-
-## usage pattern
-
-import the ServisBOT SDK
-
-```swift
-import ServisBOTSDK
-```
-
-setup your configuration
-
-instantiate the messenger
-
-```swift
-    sbMessenger = Messenger(config: basicConfig, resetAtStart: false)
-```
-
-when loading the messenger, it will produce a `WkWebView`.
-
-```swift
-    let sbView: WKWebView = try sbMessenger!.load()
-```
-
-add the webview into your controller and setup delegates if you want to track state changes
-
-```swift
-    do {
-        let sbView: WKWebView = try sbMessenger.load()
-        sbView.navigationDelegate = self
-        self.view.addSubview(sbView)
-        setLayoutDetails(webView: sbView)
-    } catch {
-        print("Messenger failed to load")
-    }
-```
-
-full code snippet here
-```swift
 import UIKit
 import WebKit
 import ServisBOTSDK
@@ -122,4 +53,4 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     }
 
 }
-```
+

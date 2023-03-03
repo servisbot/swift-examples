@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/servisbot/swift-sdk",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b13d1cdb37a850717e6ccf32782984b1f466a3d5"
+      }
+    }
+  ],
+  "version" : 2
+}
