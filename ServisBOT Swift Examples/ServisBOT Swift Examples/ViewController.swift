@@ -19,10 +19,13 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
             "endpoint": endpoint,
             "sbRegion": sbRegion,
         ]
-
-        let sbMessenger = Messenger(config: basicConfig, resetAtStart: false)
                 
         do {
+            let sbMessenger = try Messenger(
+                config: basicConfig,
+                hostNotificationDelegate: hostNotification,
+                resetAtStart: false                
+            )
             let sbView: WKWebView = try sbMessenger.load()
             sbView.navigationDelegate = self
             self.view.addSubview(sbView)
@@ -30,6 +33,10 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         } catch {
             print("Messenger failed to load")
         }
+    }
+    
+    func hostNotification(message: String) {
+        print("Host Notification \(message)")
     }
     
     func webView(_ webView: WKWebView, didFinish  navigation: WKNavigation!)
