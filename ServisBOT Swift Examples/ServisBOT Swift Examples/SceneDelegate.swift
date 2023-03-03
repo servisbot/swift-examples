@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  ServisBOT Swift Examples
-//
-//  Created by Ty Rollin on 3/3/23.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

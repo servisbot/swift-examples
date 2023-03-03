@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ServisBOT Swift Examples
-//
-//  Created by Ty Rollin on 3/3/23.
-//
-
 import UIKit
 import WebKit
 import ServisBOTSDK
@@ -42,7 +35,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish  navigation: WKNavigation!)
     {
         let url = webView.url?.absoluteString
-        print("---Loaded URL--->\(url!)") // here you are getting URL
+        print("--- Loaded hostpage domain --->\(url!)")
     }
     
     private func setLayoutDetails(webView: WKWebView) {
